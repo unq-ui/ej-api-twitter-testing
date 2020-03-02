@@ -8,6 +8,14 @@
     <artifactId>ej-api-twitter-testing</artifactId>
     <version>1.0.0</version>
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>bintray</name>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
+
     <properties>
         <slf4j.version>1.7.26</slf4j.version>
         <kotlin.version>1.3.61</kotlin.version>
