@@ -30,9 +30,6 @@ class TwitterAPI(private val port: Int) {
                 path(":username") {
                     get(twController::getUserByUsername)    // GET users/:username
                     delete(twController::deleteUser)        // DELETE users/:username
-                    path("tweet") {
-                        put(twController::newTweet)         // PUT /users/:username/tweet
-                    }
                 }
             }
             path("tweets") {

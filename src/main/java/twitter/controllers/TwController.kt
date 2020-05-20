@@ -18,26 +18,10 @@ class TwController {
         ctx.json(FullUserAdapter(user.username, user.fullname, user.tweets))
     }
 
-    fun newTweet(ctx: Context) {
+    fun createTweet(ctx: Context) {
         val user = users.firstOrNull { it.username == ctx.pathParam("username") }
                 ?: throw NotFoundResponse("Invalid username")
 
-        // users.forEach {
-        //   if (it.username == user.username) {
-        //     it.addTweet(ctx.body())
-        //   }
-        // }
-        user.addTweet(ctx.body())
-        ctx.json(FullUserAdapter(user.username, user.fullname, user.tweets))
-    }
-
-    fun createTweet(ctx: Context) {
-        Thread.sleep(5000)
-        var user = users.firstOrNull { it.username == ctx.pathParam("username") }
-        if (user == null) {
-            user = User(ctx.pathParam("username"), "", "")
-            users.add(user)
-        }
         val tweet = ctx.body<Map<String, String>>()
         user.addTweet(tweet["text"] ?: "")
         ctx.json(FullUserAdapter(user.username, user.fullname, user.tweets, tweet["text"]))

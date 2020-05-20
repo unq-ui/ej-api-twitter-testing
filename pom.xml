@@ -6,7 +6,7 @@
 
     <groupId>com.github.unq-ui</groupId>
     <artifactId>ej-api-twitter-testing</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <repositories>
         <repository>
@@ -18,8 +18,8 @@
 
     <properties>
         <slf4j.version>1.7.26</slf4j.version>
-        <kotlin.version>1.3.61</kotlin.version>
-        <javalin.version>3.7.0</javalin.version>
+        <kotlin.version>1.3.72</kotlin.version>
+        <javalin.version>3.8.0</javalin.version>
         <fuel.version>2.2.0</fuel.version>
         <fuel-jackson.version>2.2.0</fuel-jackson.version>
         <junit-jupiter.version>5.5.2</junit-jupiter.version>

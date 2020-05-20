@@ -98,8 +98,8 @@ class TwitterAPITest {
 
     @Test @Order(7)
     fun `7 PUT users-tweet`() {
-        val (_, response, result) = Fuel.put("users/@hodor/tweet")
-                .jsonBody("Hodor hodor hodor hodor ...")
+        val (_, response, result) = Fuel.post("tweets/@hodor")
+                .jsonBody("""{ "text": "Hodor hodor hodor hodor ..." }""")
                 .responseObject<FullUserAdapter>()
 
         val userResult = result.get()
@@ -107,7 +107,7 @@ class TwitterAPITest {
         assertEquals("@hodor", userResult.username)
         assertEquals("Hodor", userResult.fullname)
         assertEquals(1, userResult.tweets.size)
-        assertEquals("Hodor hodor hodor hodor ...", userResult.tweets.first())
+        assertEquals("Hodor hodor hodor hodor ...", userResult.lastTweet)
     }
 
     @Test @Order(8)
